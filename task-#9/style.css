@@ -1,0 +1,21 @@
+#loginForm {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="submit"] {
+    margin-top: 20px;
+  }
+  
+  #message {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
