@@ -6,32 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Login Form</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="form.css">
   </head>
   <body>
-    <div class="container">
-      <h1>Login Form</h1>
-      <form id="welcome.html" method="GET" class="form">
-        <label for="email">Email:</label>
-        <input type="email" id="email" required>
-        <br>
-        <label for="username">Username:</label>
-        <input type="text" id="username" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" required>
-        <br>
-        <button type="submit">Login</button>
+    <div class="form-container">
+      <form id="login-form">
+          <label for="E-MAIL">E-MAIL:</label>
+          <input type="text" id="E-MAIL" name="E-MAIL">
+          <br>
+          <label for="Username">Username:</label>
+          <input type="text" id="username" name="username">
+          <br>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password">
+          <br>
+          <input type="button" value="Login" onclick="validateForm()">
       </form>
+      <script src="validate.js"></script>
+      <script>
+          function validateForm() {
+              const EMAIL = document.getElementById("E-MAIL").value;
+              const username = document.getElementById("username").value;
+              const password = document.getElementById("password").value;
+              if (validateLogin(EMAIL,username, password)) {
+                window.location.href = "welcome.html";
+              } else {
+                  alert("Invalid username or password.Please Try Again!!!!");
+              }
+          }
+      </script>
     </div>
-    <script>
-      function redirectToHome() {
-        if (login_successful) {
-          window.location.href = "welcome.html";
-        } else {
-          alert("Invalid credentials, please try again.");
-        }
-      }
-    </script>
-</body>
-</html>
+  </body>
+  </html>
