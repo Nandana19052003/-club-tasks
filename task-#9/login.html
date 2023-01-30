@@ -9,10 +9,11 @@
     <link rel="stylesheet" type="text/css" href="form.css">
   </head>
   <body>
+    <form action="welcome.html" method="GET" class="form"></form>
     <div class="form-container">
       <form id="login-form">
-          <label for="E-MAIL">E-MAIL:</label>
-          <input type="text" id="E-MAIL" name="E-MAIL">
+          <label for="EMAIL">EMAIL:</label>
+          <input type="text" id="EMAIL" name="EMAIL">
           <br>
           <label for="Username">Username:</label>
           <input type="text" id="username" name="username">
@@ -22,19 +23,33 @@
           <br>
           <input type="button" value="Login" onclick="validateForm()">
       </form>
-      <script src="validate.js"></script>
-      <script>
-          function validateForm() {
-              const EMAIL = document.getElementById("E-MAIL").value;
-              const username = document.getElementById("username").value;
-              const password = document.getElementById("password").value;
-              if (validateLogin(EMAIL,username, password)) {
-                window.location.href = "welcome.html";
-              } else {
-                  alert("Invalid username or password.Please Try Again!!!!");
-              }
-          }
-      </script>
     </div>
+    <script>
+        function validateForm() 
+        {
+            const EMAIL = document.getElementById("EMAIL").value;
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            // Do the validation and check if the entered credentials are correct
+            if (validateLogin(username, password)) {
+                window.location.href = "welcome.html";
+            } else {
+                alert("Invalid credentials, please try again.");
+            }
+        }
+        // Define the validateLogin function
+        function validateLogin(EMAIL, username, password) {
+            if ([
+        {EMAIL: "email1@gmail.com" , username: "admin", password: "password"},
+        {EMAIL: "email2@gmail.com" ,username: "admin2", password: "password2"},
+        {EMAIL: "email3@gmail.com" ,username: "admin3", password: "password3"}
+    ]) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
   </body>
-  </html>
+</html>
+
