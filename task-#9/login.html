@@ -30,8 +30,9 @@
             const EMAIL = document.getElementById("EMAIL").value;
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
+
             // Do the validation and check if the entered credentials are correct
-            if (validateLogin(username, password)) {
+            if (validateLogin(EMAIL, username, password)) {
                 window.location.href = "welcome.html";
             } else {
                 alert("Invalid credentials, please try again.");
@@ -39,16 +40,20 @@
         }
         // Define the validateLogin function
         function validateLogin(EMAIL, username, password) {
-            if ([
+    const credentials = [
         {EMAIL: "email1@gmail.com" , username: "admin", password: "password"},
         {EMAIL: "email2@gmail.com" ,username: "admin2", password: "password2"},
         {EMAIL: "email3@gmail.com" ,username: "admin3", password: "password3"}
-    ]) {
-                return true;
-            } else {
-                return false;
-            }
+    ];
+
+    for (let i = 0; i < credentials.length; i++) {
+        if (EMAIL === credentials[i].EMAIL && username === credentials[i].username && password === credentials[i].password) {
+            return true;
         }
+    }
+    return false;
+}
+
     </script>
   </body>
 </html>
