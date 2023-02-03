@@ -18,6 +18,12 @@ const colors = {
 };
 const main_types = Object.keys(colors);
 
+// add the global variable to keep track of the counts
+const counts = {};
+main_types.forEach(type => {
+	counts[type] = 0;
+});
+
 const fetchPokemons = async () => {
 	for (let i = 1; i <= pokemons_number; i++) {
 		await getPokemon(i);
@@ -56,6 +62,60 @@ function createPokemonCard(pokemon) {
 	pokemonEl.innerHTML = pokeInnerHTML;
 
 	poke_container.appendChild(pokemonEl);
+
+	// update the count of pokemons of the current type
+	counts[type]++;
 }
 
 fetchPokemons();
+
+const filterPokemons = type => {
+	const pokemonCards = document.querySelectorAll('.pokemon');
+
+	pokemonCards.forEach(card => {
+	const poke_type = card.querySelector('.type span').textContent;
+	if (poke_type === type) {
+	card.style.display = 'block';
+	} else {
+	card.style.display = 'none';
+	}
+	});
+	};
+	
+	main_types.forEach(type => {
+		let counts = 0;
+		const button = document.getElementById(type);
+		const pokemonCards = document.querySelectorAll('.pokemon');
+		console.log(pokemonCards);
+		pokemonCards.forEach(card => {
+		  const typeValue = card.querySelector('.type span').textContent;
+		  console.log(typeValue);
+		  if (typeValue == type) {
+			counts++;
+		  }
+		});
+		console.log(counts);
+		button.innerHTML = `${type} (${counts})`;
+		button.addEventListener('click', () => {
+		  filterPokemons(type);
+		});
+	  });
+	  
+	  const searchBar = document.getElementById("search");
+	  const searchButton = document.querySelector("input[value='SEARCH']");
+	  
+	  searchButton.addEventListener("click", () => {
+		const searchTerm = searchBar.value.toLowerCase();
+		const pokemonCards = document.querySelectorAll(".pokemon");
+	  
+		pokemonCards.forEach(card => {
+		  const pokemonName = card.querySelector(".name").textContent.toLowerCase();
+	  
+		  if (pokemonName.includes(searchTerm)) {
+			card.style.display = "flex";
+		  } else {
+			card.style.display = "none";
+		  }
+		});
+	  });
+	  
