@@ -1,0 +1,142 @@
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  header form {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  header form input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+  
+  header form button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0077c0;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+
+.container {
+    background-color: #eee;
+    border-radius: 20px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .container .img-container {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+  }
+  
+  .container .img-container img {
+    margin-top: 20px;
+    max-width: 90%;
+  }
+  
+  .container .info {
+    margin-top: 20px;
+  }
+  
+  .container .number {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-size: 0.8em;
+    padding: 5px 10px;
+  }
+  
+  .container .name {
+    margin: 15px 0 7px;
+    letter-spacing: 1px;
+  }
+
+  /* Global styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f5f5f5;
+  }
+  
+  /* Card container styles */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* Card styles */
+  .card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 20px;
+    width: 200px;
+    height: 350px;
+  }
+  
+  .card:nth-child(odd) {
+    background-color: #d3d3d3;
+  }
+  
+  .card:nth-child(even) {
+    background-color: #bdbdbd;
+  }
+  
+  .card img {
+    width: 150px;
+    height: 225px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .card h2 {
+    font-size: 24px;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .card p {
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+    margin: 10px;
+  }
+  
+  
