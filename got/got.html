@@ -3,22 +3,66 @@
 <head>
 	<title>Game of Thrones Character Wiki</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="map.css">
 </head>
 <body>
 	<header>
+		<img src="https://1000logos.net/wp-content/uploads/2020/09/Game-of-Thrones-emblem.jpg" alt="Game of Thrones" width="350" height="100">
 		<h1>Game of Thrones Character Wiki</h1>
 		<form>
 			<input type="text" placeholder="Search characters...">
 			<button type="submit">Search</button>
-		</form>
+			<button id="family-button">Show families</button>
+			<button id="map-button">Explore Map</button>
 
+		</form>
 	</header>
+
 	<main>
-		<div id="character-list"></div>
-	</main>
+    <div id="character-list"></div>
+    <div id="map"></div>
+    </div>
+    <div id="poll">
+        <h2>Who is your favorite Game of Thrones character?</h2>
+        <form>
+          <label>
+            <input type="radio" name="favorite-character" value="Jon Snow">
+            Jon Snow
+          </label>
+          <br>
+          <label>
+            <input type="radio" name="favorite-character" value="Daenerys Targaryen">
+            Daenerys Targaryen
+          </label>
+          <br>
+          <label>
+            <input type="radio" name="favorite-character" value="Tyrion Lannister">
+            Tyrion Lannister
+          </label>
+          <br>
+          <label>
+            <input type="radio" name="favorite-character" value="Arya Stark">
+            Arya Stark
+          </label>
+          <br>
+          <label>
+            <input type="radio" name="favorite-character" value="Sansa Stark">
+            Sansa Stark
+          </label>
+          <br>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      
+</main>
+
+
 	<footer>
 		<p>© 2023 Game of Thrones Character Wiki</p>
 	</footer>
+
 	<script src="game.js"></script>
+	<script src="map.js"></script>
+    <script src="poll.js"></script>
 </body>
 </html>
