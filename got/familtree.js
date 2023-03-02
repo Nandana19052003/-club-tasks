@@ -1,43 +1,90 @@
-const familyTreeButton = document.getElementById('family-button'); // updated
-const familyTreeModal = document.getElementById('family-tree-modal');
-const familyTreeCloseButton = document.getElementById('family-tree-close-button');
+const familyButton = document.getElementById("familybutton");
+familyButton.addEventListener("click", showFamilyDropdown);
 
-familyTreeButton.addEventListener('click', () => {
-  familyTreeModal.style.display = 'block';
+const familyDropdown = document.getElementById("family-dropdown");
+
+familyButton.addEventListener("click", () => {
+  familyButton.classList.toggle("clicked");
 });
 
-familyTreeCloseButton.addEventListener('click', () => {
-  familyTreeModal.style.display = 'none';
-});
+function showFamilyDropdown() {
+  const familyDropdown = document.getElementById("family-dropdown");
+  familyDropdown.style.display = "block";
+}
 
-const showMoreButton = document.createElement('button');
-showMoreButton.innerText = 'Show more';
-familyTreeModal.appendChild(showMoreButton);
+familyDropdown.classList.add('family-dropdown');
+familyButton.parentElement.appendChild(familyDropdown);
 
-const familiesList = document.createElement('ul');
-familiesList.classList.add('families-list');
-familyTreeModal.appendChild(familiesList);
+// Add family names to the dropdown
+function showFamilies() {
+  const familyList = document.createElement('div');
+  familyList.id = 'family-list';
 
-const lannisters = document.createElement('li');
-lannisters.innerText = 'Lannisters';
-familiesList.appendChild(lannisters);
+  const families = [
+    'Stark',
+    'Lannister',
+    'Targaryen',
+    'Baratheon',
+    'Greyjoy',
+    'Martell',
+    'Tyrell',
+    'Arryn',
+    'Tully'
+  ];
 
-const starks = document.createElement('li');
-starks.innerText = 'Starks';
-familiesList.appendChild(starks);
+  families.forEach(family => {
+    const familyLink = document.createElement('a');
+    familyLink.textContent = family;
+    familyLink.href = '#';
+    familyLink.addEventListener('click', event => {
+      event.preventDefault();
+      displayCharactersByFamily(family);
+    });
+    familyList.appendChild(familyLink);
+  });
 
-const tyrells = document.createElement('li');
-tyrells.innerText = 'Tyrells';
-familiesList.appendChild(tyrells);
+  familyDropdown.appendChild(familyList);
 
-const targaryans = document.createElement('li');
-targaryans.innerText = 'Targaryans';
-familiesList.appendChild(targaryans);
+}
 
-showMoreButton.addEventListener('click', () => {
-  lannisters.style.display = 'block';
-  starks.style.display = 'block';
-  tyrells.style.display = 'block';
-  targaryans.style.display = 'block';
-  showMoreButton.style.display = 'none';
+showFamilies();
+
+function displayCharactersByFamily(selectedFamily) {
+  // assuming you have an array of characters with their corresponding families
+  const characters = [
+    { name: 'Arya Stark', family: 'Stark' },
+    { name: 'Tyrion Lannister', family: 'Lannister' },
+    { name: 'Daenerys Targaryen', family: 'Targaryen' },
+    { name: 'Stannis Baratheon', family: 'Baratheon' },
+    { name: 'Theon Greyjoy', family: 'Greyjoy' },
+    { name: 'Oberyn Martell', family: 'Martell' },
+    { name: 'Margaery Tyrell', family: 'Tyrell' },
+    { name: 'Jon Arryn', family: 'Arryn' },
+    { name: 'Catelyn Tully', family: 'Tully' },
+    { name: 'Robb Stark', family: 'Stark' },
+    { name: 'Cersei Lannister', family: 'Lannister' },
+    { name: 'Viserys Targaryen', family: 'Targaryen' },
+    { name: 'Renly Baratheon', family: 'Baratheon' },
+    { name: 'Balon Greyjoy', family: 'Greyjoy' },
+    { name: 'Doran Martell', family: 'Martell' },
+    { name: 'Loras Tyrell', family: 'Tyrell' },
+    { name: 'Robin Arryn', family: 'Arryn' },
+    { name: 'Edmure Tully', family: 'Tully' },
+  ];
+
+  const characterList = document.getElementById('character-list');
+  characterList.innerHTML = '';
+
+  characters
+    .filter(character => character.family === selectedFamily)
+    .forEach(character => {
+      const characterName = document.createElement('p');
+      characterName.textContent = character.name;
+      characterList.appendChild(characterName);
+    });
+}
+
+familyButton.addEventListener('click', event => {
+  event.preventDefault();
+  familyDropdown.classList.toggle('show');
 });

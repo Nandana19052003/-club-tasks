@@ -133,9 +133,62 @@ main {
   margin: 15px 0
 }
 
+.house {
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 45%;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  @media (max-width: 768px) {
+    .house {
+      display: block;
+      width: 100%;
+    }
+  }
+  
+
+.house:hover {
+  box-shadow: 0 5px 20px rgba(100, 100, 100, 0.8);
+  transform: translateY(-5px);
+}
+
+.house .img-container {
+  background-color: #ea0a8e;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.house .img-container img {
+  width: 100%;
+}
+
+.character .info {
+  margin-top: 20px;
+}
+
+.house .number {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  font-size: 0.8em;
+  padding: 5px 10px;
+}
+
+.house .name {
+  margin: 15px 0
+}
 
   /* Show families button */
-#family-button {
+#familybutton {
     background-color: transparent;
     border: 2px solid #0088cc;
     color:  #0088cc;
@@ -146,10 +199,81 @@ main {
     transition: all 0.3s ease;
   }
   
-  #family-button:hover {
+  #familybutton:hover {
     background-color: #0088cc;
     color: #fff;
   }
+
+
+#family-list {
+  display: none; /* hide the list by default */
+  position: absolute; /* position the list relative to the button */
+  top: 40px; /* adjust the position to your liking */
+  right: 0;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+  z-index: 1; /* make sure the list is on top of other elements */
+}
+
+#family-list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#family-list li {
+  margin: 5px 0;
+}
+
+#familybutton:hover + #family-list,
+#family-list:hover {
+  display: block; /* show the list when hovering over the button or list */
+}
+
+/*.family-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  z-index: 1;
+}
+
+.family-dropdown.show {
+  display: block;
+}*/
+#familybutton {
+  position: relative;
+}
+
+#family-dropdown {
+  display: none;
+  position: absolute;
+  top: 100px;
+  left: 1200px; /* adjust the value as needed */
+  z-index: 1;
+  background-color: #555;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  padding: 10px;
+}
+
+#family-dropdown option {
+  background-color: #777;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  padding: 10px;
+}
+
+
+
+#familybutton.clicked + #family-dropdown {
+  display: block;
+}
+
+
 
 
   #map-button {
@@ -167,6 +291,38 @@ main {
     background-color: #ff9900;
     color: #fff;
   }
+
+  #viewall {
+    background-color: transparent;
+    border: 2px solid#f64403;
+    color: #f64403;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    margin-right: 10px;
+    padding: 5px;
+    transition: all 0.3s ease
+}
+
+#viewall:hover {
+  background-color: #f64403;
+  color: #fff;
+}
+
+#viewhouse {
+  background-color: transparent;
+  border: 2px solid#f60395;
+  color: #f60395;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  margin-right: 10px;
+  padding: 5px;
+  transition: all 0.3s ease
+}
+
+#viewhouse:hover {
+background-color: #f60395;
+color: #fff;
+}
 
   /* poll*/
   #poll {

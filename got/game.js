@@ -1,6 +1,7 @@
 const characterList = document.getElementById('character-list');
 const searchInput = document.querySelector('input[type="text"]');
 
+
 let characters = [];
 
 fetch('https://thronesapi.com/api/v2/Characters')
@@ -64,52 +65,9 @@ searchInput.addEventListener('input', event => {
 });
 
 
-const charactersWithChildren = characters.reduce((acc, character) => {
-  const { id, parentId, fullName } = character;
-  if (parentId === null) {
-    acc[fullName] = { ...character, children: [] };
-  } else {
-    const parent = acc[characters.find(c => c.id === parentId).fullName];
-    if (parent) {
-      parent.children.push(character);
-    }
-  }
-  return acc;
-}, {});
 
 
-function createCharacterElement(character) {
-  const element = document.createElement('div');
-  element.classList.add('character');
-  const image = document.createElement('img');
-  image.src = character.imageUrl;
-  image.style.width = '150px';
-  image.style.height = '150px';
-  element.appendChild(image);
-  const name = document.createElement('h2');
-  name.textContent = character.fullName;
-  element.appendChild(name);
-  const children = document.createElement('div');
-  children.classList.add('children');
-  character.children.forEach(child => {
-    children.appendChild(createCharacterElement(child));
-  });
-  element.appendChild(children);
-  return element;
-}
 
 
-function createFamilyTreeElement(charactersWithChildren) {
-  const element = document.createElement('div');
-  element.classList.add('family-tree');
-  Object.values(charactersWithChildren).forEach(character => {
-    if (character.parentId === null) {
-      element.appendChild(createCharacterElement(character));
-    }
-  });
-  return element;
-}
 
 
-const familyTreeElement = createFamilyTreeElement(charactersWithChildren);
-document.body.appendChild(familyTreeElement);

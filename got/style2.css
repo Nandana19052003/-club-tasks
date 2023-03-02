@@ -1,0 +1,165 @@
+/* Global Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  
+  /* Header Styles */
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e2e2e;
+    padding: 1.5rem;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 3rem;
+    margin-right: 1rem;
+  }
+  
+  .logo h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  nav ul li {
+    margin-right: 2rem;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  nav ul li a:hover {
+    color: #f5c518;
+  }
+  
+  /* Banner Styles */
+  
+  .banner {
+    position: relative;
+  }
+  
+  .banner img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+  }
+  
+  .banner-content h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  
+  .banner-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .banner-content button {
+    background-color: #f5c518;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .banner-content button:hover {
+    background-color: #fff;
+    color: #f5c518;
+  }
+  
+  /* Characters Styles */
+  
+  .characters {
+    padding: 4rem;
+  }
+  
+  .characters .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+  }
+  
+  .characters .title h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  
+  .characters .title a {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #f5c518;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .characters .title a:hover {
+    color: #fff;
+  }
+  
+  .character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+  }
+  
+  .character {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .character img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .character h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 1rem;
+    font-size: 1.5rem
+  }  
