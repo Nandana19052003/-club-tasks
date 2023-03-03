@@ -64,6 +64,15 @@ searchInput.addEventListener('input', event => {
   displayCharacters(filteredCharacters);
 });
 
+const familyFilter = document.getElementById('family-dropdown');
+familyFilter.addEventListener('change', event => {
+  const selectedFamily = event.target.value.toLowerCase();
+  const filteredCharacters = selectedFamily
+    ? characters.filter(character => character.family.toLowerCase() === selectedFamily)
+    : characters;
+
+  displayCharacters(filteredCharacters);
+});
 
 
 
