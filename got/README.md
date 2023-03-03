@@ -13,9 +13,3 @@ This is a website that provides information on the characters and houses in the 
 <h2>Usage</h2>
 <br>
 Click on the "View All" link to see more characters or houses.
-<br>
-
-<h2>Screenshots</h2>
-<h3>Character page</h3>
-	<img src="C:\\Users\\bnand\\Documents\\clubtasks\\-club-tasks\\got\\char0.jpg" alt="Game of Thrones">
-<br>
